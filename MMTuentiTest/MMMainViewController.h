@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MMMainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *allTransactions;
+@property (nonatomic, strong) NSArray *tableRates;
 @end
 

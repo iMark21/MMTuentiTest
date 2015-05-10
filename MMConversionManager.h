@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface MMConversionManager : NSObject
-
++(instancetype)sharedInstance;
+-(float)matchRateConversion: (float)amount from:(NSString*)currency on:(NSArray*)rates;
 @end

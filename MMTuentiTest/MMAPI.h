@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MMApi : NSObject
+@interface MMAPI : NSObject
+
++(instancetype)sharedInstance;
+- (void)JSONArray:(NSURL *) url completionBlock:(void (^)(NSArray *JSONArray, NSError *error)) block ;
+
 
 @end

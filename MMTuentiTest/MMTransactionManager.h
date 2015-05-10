@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TransactionManager : NSObject
-
+@interface MMTransactionManager : NSObject
++(instancetype)sharedInstance;
+-(NSArray *)getSkuList: (NSArray *)array;
+-(NSArray *)getTransactionsBySku: (NSString *)sku on:(NSArray *)array;
 @end

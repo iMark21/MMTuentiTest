@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MMDetailViewController : UIViewController
+@interface MMDetailViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *totalAmountLabel;
+@property (nonatomic, strong) NSString *skuNumber;
+@property (nonatomic, strong) NSArray *allTransactions;
+@property (nonatomic, strong) NSArray *tableRates;
 
 @end
