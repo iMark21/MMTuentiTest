@@ -42,6 +42,7 @@
         
         self.allTransactions = JSONArray;
         self.transactions = [[MMTransactionManager sharedInstance]getSkuList:JSONArray];
+        [self.tableView reloadData];
         
     }];
     

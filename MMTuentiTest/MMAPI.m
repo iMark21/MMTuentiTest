@@ -29,21 +29,25 @@
                                              cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                          timeoutInterval:30.0];
     
-    NSURLResponse *response;
-    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
-    
-    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-    
-    
-    if(jsonArray) {
-        block(jsonArray, nil);
+   
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         
-    } else {
-        NSError *error = [NSError errorWithDomain:@"plist_download_error" code:1
-                                         userInfo:[NSDictionary dictionaryWithObject:@"Can't fetch data" forKey:NSLocalizedDescriptionKey]];
-        block(nil, error);
-    }
-    
+        
+        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        
+        
+        if(jsonArray) {
+            block(jsonArray, nil);
+            
+        } else {
+            NSError *error = [NSError errorWithDomain:@"plist_download_error" code:1
+                                             userInfo:[NSDictionary dictionaryWithObject:@"Can't fetch data" forKey:NSLocalizedDescriptionKey]];
+            block(nil, error);
+        }
+
+        
+        
+    }];
     
 }
 
