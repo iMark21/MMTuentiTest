@@ -9,6 +9,7 @@
 #import "MMDetailViewController.h"
 #import "MMTransactionManager.h"
 #import "MMConversionManager.h"
+#import "MMDetailTableViewCell.h"
 
 @interface MMDetailViewController ()
 
@@ -42,8 +43,7 @@
     
     self.totalAmountLabel.text = [NSString stringWithFormat:@"Total amount: %.02f EUR",[self calculateTotalAmount]];
     
-    [self.tableView reloadData];
-    
+
 }
 
 -(float)calculateTotalAmount{
@@ -73,13 +73,18 @@
     
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    MMDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[MMDetailTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     NSDictionary *transaction = [self.transactionsOfSku objectAtIndex:indexPath.row];
-    cell.textLabel.text =  [NSString stringWithFormat:@"%@ - %@ %@",[transaction valueForKey:@"sku"],[transaction valueForKey:@"amount"],[transaction valueForKey:@"currency"]];
+    
+    cell.SKUNumberLabel.text =  [NSString stringWithFormat:@"%@",[transaction valueForKey:@"sku"]];
+    
+    cell.amountLabel.text =  [NSString stringWithFormat:@"%@ %@",[transaction valueForKey:@"amount"],[transaction valueForKey:@"currency"]];
+    
+    cell.imageTransaction.image = [UIImage imageNamed:@"12029-NNXQKB.jpg"];
     
     return cell;
 }

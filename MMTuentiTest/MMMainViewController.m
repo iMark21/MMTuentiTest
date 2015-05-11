@@ -15,6 +15,7 @@
 #import "MMConversionManager.h"
 #import "MMDetailViewController.h"
 #import "MMMainTableViewCell.h"
+#import "SVProgressHUD.h"
 
 @interface MMMainViewController ()
 
@@ -40,18 +41,22 @@
 -(void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
-    self.tableView.backgroundColor = [UIColor grayColor];
+
+    self.navigationController.navigationBar.topItem.title  = NSLocalizedString(@"Goliath National Bank", @"");
+    
     [self loadData];
     
 }
 
 -(void)loadData{
     
+    [SVProgressHUD showWithStatus:@"Cargando" maskType:SVProgressHUDMaskTypeGradient];
     [[MMAPI sharedInstance]JSONArray:[NSURL URLWithString:TRANSACTIONS_URL] completionBlock:^(NSArray *JSONArray, NSError *error) {
         
         self.allTransactions = JSONArray;
         self.transactions = [[MMTransactionManager sharedInstance]getSkuList:JSONArray];
         [self.tableView reloadData];
+        [SVProgressHUD dismiss];
         
     }];
     

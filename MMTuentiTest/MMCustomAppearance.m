@@ -28,6 +28,10 @@
 -(void)applyAppearance{
     
     [self setupNavigationBarAppearance];
+    
+    [self setupTableViewAppearance];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
 }
 
@@ -36,8 +40,15 @@
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:15/255.0 green:117/255.0 blue:178/255.0 alpha:1.0]];
     
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName]];
 
 }
 
+-(void)setupTableViewAppearance{
+    
+    [[UITableView appearance]setBackgroundColor:[UIColor grayColor]];
+    
+}
 
 @end

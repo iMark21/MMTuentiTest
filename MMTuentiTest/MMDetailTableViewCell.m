@@ -1,20 +1,18 @@
 //
-//  MMMainTableViewCell.m
+//  MMDetailTableViewCell.m
 //  MMTuentiTest
 //
 //  Created by Michel Marqués on 11/5/15.
 //  Copyright (c) 2015 Michel Marqués. All rights reserved.
 //
 
-#import "MMMainTableViewCell.h"
+#import "MMDetailTableViewCell.h"
 
-@implementation MMMainTableViewCell
+@implementation MMDetailTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
-    
 }
-
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
@@ -24,14 +22,14 @@
     view.backgroundColor = [UIColor colorWithRed:.0 green:.0 blue:.0 alpha:.4];
     
     UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(10,5, self.contentView.frame.size.width -20, self.contentView.frame.size.height -10)];
-
+    
     view1.backgroundColor = [UIColor whiteColor];
-
+    
     [view addSubview:view1];
     
     self.selectedBackgroundView = view;
     
-
+    
 }
 
 -(void)didMoveToSuperview{

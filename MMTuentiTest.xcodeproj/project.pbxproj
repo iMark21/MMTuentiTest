@@ -13,6 +13,9 @@
 		5F9AB8A11B012E79008BEADF /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9AB89D1B012E79008BEADF /* SVProgressHUD.m */; };
 		5F9AB8A21B012E79008BEADF /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9AB89F1B012E79008BEADF /* SVIndefiniteAnimatedView.m */; };
 		5F9AB8A31B012E79008BEADF /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F9AB8A01B012E79008BEADF /* SVProgressHUD.bundle */; };
+		5F9AB8A61B01350E008BEADF /* MMDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9AB8A51B01350E008BEADF /* MMDetailTableViewCell.m */; };
+		5F9AB8A81B013712008BEADF /* 12029-NNXQKB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F9AB8A71B013712008BEADF /* 12029-NNXQKB.jpg */; };
+		5F9AB8AA1B013BAE008BEADF /* money_PNG3544.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F9AB8A91B013BAE008BEADF /* money_PNG3544.png */; };
 		5FB61F5A1AFD54A30041BFD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB61F591AFD54A30041BFD4 /* main.m */; };
 		5FB61F5D1AFD54A30041BFD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB61F5C1AFD54A30041BFD4 /* AppDelegate.m */; };
 		5FB61F601AFD54A30041BFD4 /* MMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB61F5F1AFD54A30041BFD4 /* MMMainViewController.m */; };
@@ -47,6 +50,10 @@
 		5F9AB89E1B012E79008BEADF /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		5F9AB89F1B012E79008BEADF /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		5F9AB8A01B012E79008BEADF /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		5F9AB8A41B01350E008BEADF /* MMDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDetailTableViewCell.h; sourceTree = "<group>"; };
+		5F9AB8A51B01350E008BEADF /* MMDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDetailTableViewCell.m; sourceTree = "<group>"; };
+		5F9AB8A71B013712008BEADF /* 12029-NNXQKB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "12029-NNXQKB.jpg"; sourceTree = "<group>"; };
+		5F9AB8A91B013BAE008BEADF /* money_PNG3544.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = money_PNG3544.png; sourceTree = "<group>"; };
 		5FB61F541AFD54A30041BFD4 /* MMTuentiTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMTuentiTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FB61F581AFD54A30041BFD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FB61F591AFD54A30041BFD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,6 +106,8 @@
 		5F9AB8911B01218B008BEADF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5F9AB8A71B013712008BEADF /* 12029-NNXQKB.jpg */,
+				5F9AB8A91B013BAE008BEADF /* money_PNG3544.png */,
 				5F9AB8981B0127F0008BEADF /* 05.jpg */,
 			);
 			name = Images;
@@ -109,6 +118,8 @@
 			children = (
 				5F9AB8951B012265008BEADF /* MMMainTableViewCell.h */,
 				5F9AB8961B012265008BEADF /* MMMainTableViewCell.m */,
+				5F9AB8A41B01350E008BEADF /* MMDetailTableViewCell.h */,
+				5F9AB8A51B01350E008BEADF /* MMDetailTableViewCell.m */,
 			);
 			name = "Custom Cells";
 			sourceTree = "<group>";
@@ -285,8 +296,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F9AB8AA1B013BAE008BEADF /* money_PNG3544.png in Resources */,
 				5F9AB8A31B012E79008BEADF /* SVProgressHUD.bundle in Resources */,
 				5FB61F631AFD54A30041BFD4 /* Main.storyboard in Resources */,
+				5F9AB8A81B013712008BEADF /* 12029-NNXQKB.jpg in Resources */,
 				5FB61F681AFD54A30041BFD4 /* LaunchScreen.xib in Resources */,
 				5F9AB8991B0127F0008BEADF /* 05.jpg in Resources */,
 				5FB61F651AFD54A30041BFD4 /* Images.xcassets in Resources */,
@@ -313,6 +326,7 @@
 				5FB61F5D1AFD54A30041BFD4 /* AppDelegate.m in Sources */,
 				5F9AB88F1B011EF4008BEADF /* MMCustomAppearance.m in Sources */,
 				5FB61F851AFD61990041BFD4 /* MMConversionManager.m in Sources */,
+				5F9AB8A61B01350E008BEADF /* MMDetailTableViewCell.m in Sources */,
 				5FB61F7F1AFD58C90041BFD4 /* MMAPI.m in Sources */,
 				5F9AB8A11B012E79008BEADF /* SVProgressHUD.m in Sources */,
 				5F9AB8971B012265008BEADF /* MMMainTableViewCell.m in Sources */,
