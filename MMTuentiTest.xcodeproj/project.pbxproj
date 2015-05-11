@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F9AB88F1B011EF4008BEADF /* MMCustomAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9AB88E1B011EF4008BEADF /* MMCustomAppearance.m */; };
+		5F9AB8971B012265008BEADF /* MMMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9AB8961B012265008BEADF /* MMMainTableViewCell.m */; };
 		5FB61F5A1AFD54A30041BFD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB61F591AFD54A30041BFD4 /* main.m */; };
 		5FB61F5D1AFD54A30041BFD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB61F5C1AFD54A30041BFD4 /* AppDelegate.m */; };
 		5FB61F601AFD54A30041BFD4 /* MMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB61F5F1AFD54A30041BFD4 /* MMMainViewController.m */; };
@@ -31,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F9AB88D1B011EF4008BEADF /* MMCustomAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCustomAppearance.h; sourceTree = "<group>"; };
+		5F9AB88E1B011EF4008BEADF /* MMCustomAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCustomAppearance.m; sourceTree = "<group>"; };
+		5F9AB8951B012265008BEADF /* MMMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMainTableViewCell.h; sourceTree = "<group>"; };
+		5F9AB8961B012265008BEADF /* MMMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMainTableViewCell.m; sourceTree = "<group>"; };
 		5FB61F541AFD54A30041BFD4 /* MMTuentiTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMTuentiTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FB61F581AFD54A30041BFD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FB61F591AFD54A30041BFD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,6 +78,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F9AB8901B012181008BEADF /* Media Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F9AB8911B01218B008BEADF /* Images */,
+			);
+			name = "Media Files";
+			sourceTree = "<group>";
+		};
+		5F9AB8911B01218B008BEADF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		5F9AB8941B01222D008BEADF /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5F9AB8951B012265008BEADF /* MMMainTableViewCell.h */,
+				5F9AB8961B012265008BEADF /* MMMainTableViewCell.m */,
+			);
+			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
 		5FB61F4B1AFD54A30041BFD4 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +123,8 @@
 		5FB61F561AFD54A30041BFD4 /* MMTuentiTest */ = {
 			isa = PBXGroup;
 			children = (
+				5F9AB8941B01222D008BEADF /* Custom Cells */,
+				5F9AB8901B012181008BEADF /* Media Files */,
 				5FB61F5B1AFD54A30041BFD4 /* AppDelegate.h */,
 				5FB61F5C1AFD54A30041BFD4 /* AppDelegate.m */,
 				5FB61F5E1AFD54A30041BFD4 /* MMMainViewController.h */,
@@ -109,6 +141,8 @@
 				5FB61F811AFD61750041BFD4 /* MMTransactionManager.m */,
 				5FB61F831AFD61990041BFD4 /* MMConversionManager.h */,
 				5FB61F841AFD61990041BFD4 /* MMConversionManager.m */,
+				5F9AB88D1B011EF4008BEADF /* MMCustomAppearance.h */,
+				5F9AB88E1B011EF4008BEADF /* MMCustomAppearance.m */,
 			);
 			path = MMTuentiTest;
 			sourceTree = "<group>";
@@ -243,8 +277,10 @@
 				5FB61F8B1AFD76300041BFD4 /* MMDetailViewController.m in Sources */,
 				5FB61F601AFD54A30041BFD4 /* MMMainViewController.m in Sources */,
 				5FB61F5D1AFD54A30041BFD4 /* AppDelegate.m in Sources */,
+				5F9AB88F1B011EF4008BEADF /* MMCustomAppearance.m in Sources */,
 				5FB61F851AFD61990041BFD4 /* MMConversionManager.m in Sources */,
 				5FB61F7F1AFD58C90041BFD4 /* MMAPI.m in Sources */,
+				5F9AB8971B012265008BEADF /* MMMainTableViewCell.m in Sources */,
 				5FB61F5A1AFD54A30041BFD4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +478,7 @@
 				5FB61F791AFD54A40041BFD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5FB61F7A1AFD54A40041BFD4 /* Build configuration list for PBXNativeTarget "MMTuentiTestTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +487,7 @@
 				5FB61F7C1AFD54A40041BFD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
