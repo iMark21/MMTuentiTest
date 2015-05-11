@@ -121,7 +121,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Tan-v2-RVR">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="62" id="byb-dY-XG6" customClass="MMDetailTableViewCell">
@@ -195,25 +195,29 @@
                                     <outlet property="delegate" destination="17y-OL-Ti5" id="fHz-QE-XVb"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6U-Ng-ixG">
-                                <rect key="frame" x="16" y="522" width="568" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Nwo-H1-SKT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLx-la-uci">
+                                <rect key="frame" x="0.0" y="600" width="600" height="0.0"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6U-Ng-ixG">
+                                        <rect key="frame" x="16" y="14" width="568" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="JLx-la-uci" secondAttribute="trailing" id="1Kr-1P-vNO"/>
+                            <constraint firstItem="DKO-zV-EAU" firstAttribute="top" secondItem="JLx-la-uci" secondAttribute="bottom" id="7G1-nc-VuO"/>
+                            <constraint firstItem="JLx-la-uci" firstAttribute="top" secondItem="Tan-v2-RVR" secondAttribute="bottom" id="7nB-ry-qJR"/>
                             <constraint firstItem="Tan-v2-RVR" firstAttribute="leading" secondItem="DOv-5h-ZT1" secondAttribute="leading" id="BfI-1H-eJt"/>
+                            <constraint firstItem="JLx-la-uci" firstAttribute="leading" secondItem="DOv-5h-ZT1" secondAttribute="leading" id="Cis-mf-7zW"/>
                             <constraint firstItem="Tan-v2-RVR" firstAttribute="top" secondItem="DOv-5h-ZT1" secondAttribute="top" id="Gqu-yc-4tD"/>
-                            <constraint firstItem="o6U-Ng-ixG" firstAttribute="leading" secondItem="DOv-5h-ZT1" secondAttribute="leading" constant="16" id="IkJ-QL-yxa"/>
-                            <constraint firstAttribute="trailing" secondItem="o6U-Ng-ixG" secondAttribute="trailing" constant="16" id="PoA-EQ-mNF"/>
                             <constraint firstAttribute="trailing" secondItem="Tan-v2-RVR" secondAttribute="trailing" id="SnS-1J-w7L"/>
-                            <constraint firstItem="DKO-zV-EAU" firstAttribute="top" secondItem="Tan-v2-RVR" secondAttribute="bottom" constant="100" id="jUr-dF-uNU"/>
-                            <constraint firstItem="o6U-Ng-ixG" firstAttribute="top" secondItem="Tan-v2-RVR" secondAttribute="bottom" constant="22" id="qFZ-kw-OSY"/>
+                            <constraint firstItem="DKO-zV-EAU" firstAttribute="top" secondItem="Tan-v2-RVR" secondAttribute="bottom" id="jUr-dF-uNU"/>
                         </constraints>
                     </view>
                     <connections>

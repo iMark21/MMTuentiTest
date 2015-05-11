@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Michel Marqués. All rights reserved.
 //
 
-#define RATES_URL @"http://quiet-stone-2094.herokuapp.com/rates.json"
+
 #define TRANSACTIONS_URL @"http://quiet-stone-2094.herokuapp.com/transactions.json"
 
 #import "MMMainViewController.h"
@@ -50,7 +50,7 @@
 
 -(void)loadData{
     
-    [SVProgressHUD showWithStatus:@"Cargando" maskType:SVProgressHUDMaskTypeGradient];
+    [SVProgressHUD showWithStatus:@"Cargando Transacciones" maskType:SVProgressHUDMaskTypeGradient];
     [[MMAPI sharedInstance]JSONArray:[NSURL URLWithString:TRANSACTIONS_URL] completionBlock:^(NSArray *JSONArray, NSError *error) {
         
         self.allTransactions = JSONArray;
@@ -58,12 +58,6 @@
         [self.tableView reloadData];
         [SVProgressHUD dismiss];
         
-    }];
-    
-    
-    [[MMAPI sharedInstance]JSONArray:[NSURL URLWithString:RATES_URL] completionBlock:^(NSArray *JSONArray, NSError *error) {
-        
-        self.tableRates = JSONArray;
     }];
     
 }
@@ -113,7 +107,7 @@
         // Pass any objects to the view controller here, like...
         [vc setSkuNumber:skuNumber];
         [vc setAllTransactions:self.allTransactions];
-        [vc setTableRates:self.tableRates];
+        
     }
 }
 

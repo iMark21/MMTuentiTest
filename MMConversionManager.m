@@ -23,10 +23,14 @@
     
 }
 
--(float)matchRateConversion: (float)amount from:(NSString*)currency on:(NSArray*)rates{
+-(float)matchRateConversion: (float)amount from:(NSString*)currency to:(NSString *) newCurrency on:(NSArray*)rates{
 
+    
+    if ([newCurrency isEqualToString:currency]) {
+        return amount;
+    }else{
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"from == %@ AND to== %@",currency, @"EUR"];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"from == %@ AND to== %@",currency, newCurrency];
         
         NSArray *ratesFiltered = [rates filteredArrayUsingPredicate:predicate];
         
@@ -50,13 +54,17 @@
             
             float newAmount = amount * rateValue;
             
-            result = [self matchRateConversion:newAmount from:[currencyNew firstObject] on:rates];
+            result = [self matchRateConversion:newAmount from:[currencyNew firstObject] to:newCurrency on:rates];
             
             
         }
         
         return result;
 
+        
+    }
+    
+    
     
     
 }

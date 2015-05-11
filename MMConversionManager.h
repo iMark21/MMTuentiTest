@@ -10,5 +10,5 @@
 
 @interface MMConversionManager : NSObject
 +(instancetype)sharedInstance;
--(float)matchRateConversion: (float)amount from:(NSString*)currency on:(NSArray*)rates;
+-(float)matchRateConversion: (float)amount from:(NSString*)currency to: (NSString *) newCurrency on:(NSArray*)rates;
 @end

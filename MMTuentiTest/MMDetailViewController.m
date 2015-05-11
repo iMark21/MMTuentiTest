@@ -6,10 +6,14 @@
 //  Copyright (c) 2015 Michel Marqués. All rights reserved.
 //
 
+#define RATES_URL @"http://quiet-stone-2094.herokuapp.com/rates.json"
+
 #import "MMDetailViewController.h"
 #import "MMTransactionManager.h"
 #import "MMConversionManager.h"
+#import "MMAPI.h"
 #import "MMDetailTableViewCell.h"
+#import "SVProgressHUD.h"
 
 @interface MMDetailViewController ()
 
@@ -25,11 +29,24 @@
     [super viewDidLoad];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
-    [self loadData];
+    
   
     // Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    [self loadData];
+    UIBarButtonItem *righButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Calcular Total"
+                                   style:UIBarButtonItemStylePlain
+                                   target:self
+                                   action:@selector(calculateAction:)];
+    self.navigationItem.rightBarButtonItem = righButton;
+    
+    
+}
 
 
 - (void)didReceiveMemoryWarning {
@@ -39,23 +56,40 @@
 
 -(void)loadData{
     
+    [SVProgressHUD showWithStatus:@"Cargando" maskType:SVProgressHUDMaskTypeGradient];
+    [[MMAPI sharedInstance]JSONArray:[NSURL URLWithString:RATES_URL] completionBlock:^(NSArray *JSONArray, NSError *error) {
+        
+        self.tableRates = JSONArray;
+        [SVProgressHUD dismiss];
+        
+    }];
+    
     self.transactionsOfSku = [[MMTransactionManager sharedInstance]getTransactionsBySku:self.skuNumber on:self.allTransactions];
-    
-    self.totalAmountLabel.text = [NSString stringWithFormat:@"Total amount: %.02f EUR",[self calculateTotalAmount]];
-    
 
 }
 
--(float)calculateTotalAmount{
+-(float)calculateTotalAmountIn:(NSString *)currency{
     
     float total = 0;
     for (NSObject *transaction in self.transactionsOfSku) {
         
-        total = total + [[MMConversionManager sharedInstance]matchRateConversion:[[transaction valueForKey:@"amount" ]floatValue] from:[transaction valueForKey:@"currency"] on:self.tableRates];
+        total = total + [[MMConversionManager sharedInstance]matchRateConversion:[[transaction valueForKey:@"amount" ]floatValue] from:[transaction valueForKey:@"currency"] to:currency on:self.tableRates];
 
     }
     
     return total;
+}
+
+-(IBAction)calculateAction:(id)sender{
+    
+
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Total Amount: %.02f EUR",[self calculateTotalAmountIn:@"EUR"]]
+                                                    message:[NSString stringWithFormat:@"Total Amount: %.02f USD",[self calculateTotalAmountIn:@"USD"]]
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles: nil];
+    [alert show];
+    
 }
 
 
