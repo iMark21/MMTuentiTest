@@ -14,6 +14,7 @@
 #import "MMTransactionManager.h"
 #import "MMConversionManager.h"
 #import "MMDetailViewController.h"
+#import "MMMainTableViewCell.h"
 
 @interface MMMainViewController ()
 
@@ -30,10 +31,18 @@
     
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
-    [self loadData];
+    
 
     
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    self.tableView.backgroundColor = [UIColor grayColor];
+    [self loadData];
+    
 }
 
 -(void)loadData{
@@ -73,13 +82,14 @@
     
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    MMMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[MMMainTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     NSString *transactionSKU = [self.transactions objectAtIndex:indexPath.row];
-    cell.textLabel.text =  transactionSKU;
+    cell.skuNumberLabel.text =  transactionSKU;
+    cell.imageTransaction.image = [UIImage imageNamed:@"05.jpg"];
     
     return cell;
 }
@@ -92,8 +102,8 @@
         // Get reference to the destination view controller
         MMDetailViewController *vc = [segue destinationViewController];
         
-        UITableViewCell *cell = (UITableViewCell *)sender;
-        NSString *skuNumber = cell.textLabel.text;
+        MMMainTableViewCell *cell = (MMMainTableViewCell *)sender;
+        NSString *skuNumber = cell.skuNumberLabel.text;
         
         // Pass any objects to the view controller here, like...
         [vc setSkuNumber:skuNumber];

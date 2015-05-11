@@ -34,6 +34,8 @@
 -(void)setupNavigationBarAppearance{
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:15/255.0 green:117/255.0 blue:178/255.0 alpha:1.0]];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 
 }
 

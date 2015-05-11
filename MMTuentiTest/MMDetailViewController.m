@@ -42,6 +42,8 @@
     
     self.totalAmountLabel.text = [NSString stringWithFormat:@"Total amount: %.02f EUR",[self calculateTotalAmount]];
     
+    [self.tableView reloadData];
+    
 }
 
 -(float)calculateTotalAmount{
